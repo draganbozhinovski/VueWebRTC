@@ -40,7 +40,8 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/dist/*" --profile-name "staticwebsitewebrtc" --name "https://staticwebsitewebrtc.azureedge.net" --resource-group "WebRTC"
+           cd dist
+           az cdn endpoint purge --content-paths  "/*" --profile-name "staticwebsitewebrtc" --name "https://staticwebsitewebrtc.azureedge.net" --resource-group "WebRTC"
 
   # Azure logout
     - name: logout
